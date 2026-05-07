@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Music Vibes</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(135deg, #ff7e5f, #6a11cb);
+      height: 100vh;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 15px;
+      background: rgba(0,0,0,0.3);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .page {
+      display: none;
+      text-align: center;
+      padding: 40px;
+    }
+
+    .active {
+      display: block;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: white;
+      color: #6a11cb;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .track {
+      margin: 15px 0;
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a onclick="showPage('home')">Home</a>
+  <a onclick="showPage('music')">Music</a>
+  <a onclick="showPage('mashup')">Mashup</a>
+  <a onclick="showPage('about')">About</a>
+</nav>
+
+<div id="home" class="page active">
+  <h1>Happiest Birthday World's Best Cuccino</h1>
+  <p>You deserve all the love and more. Best wishes ❤️</p>
+
+  <img 
+    src="mr.Opare-Addo.png" 
+    alt="Birthday Card"
+    style="width: 500px; max-width: 90%; border-radius: 20px; margin-top: 30px; box-shadow: 0 0 25px rgba(0,0,0,0.4);"
+  >
+</div>
+
+
+
+<div id="music" class="page">
+  <h1> A Piece of my Heart</h1>
+  <audio id="audio" src="piece of my Heart.mp3"></audio>
+  <br>
+  <button onclick="playMusic()">Play</button>
+  <button onclick="pauseMusic()">Pause</button>
+</div>
+
+
+
+<div id="mashup" class="page">
+  <h1>Mashup Songs 🎶</h1>
+
+  <div class="track">
+    <p>🎵 Fameye - Long Life</p>
+    <audio id="track1" src="longlife.mp3"></audio>
+    <br>
+    <button onclick="playTrack('track1')">Play</button>
+    <button onclick="pauseTrack('track1')">Pause</button>
+  </div>
+
+  <div class="track">
+    <p>🎵 Fameye - Praise</p>
+    <audio id="track2" src="praise.mp3"></audio>
+    <br>
+    <button onclick="playTrack('track2')">Play</button>
+    <button onclick="pauseTrack('track2')">Pause</button>
+  </div>
+
+  <div class="track">
+    <p>🎵 Fameye - Very Soon</p>
+    <audio id="track3" src="very soon.mp3"></audio>
+    <br>
+    <button onclick="playTrack('track3')">Play</button>
+    <button onclick="pauseTrack('track3')">Pause</button>
+  </div>
+</div>
+  
+<div id="about" class="page">
+  <h1 style="
+    font-family: 'Brush Script MT', cursive;
+    font-size: 60px;
+    color: #fff;
+  ">
+    To Opare-Addo ❤️🎂
+  </h1>
+
+  <p style="
+    font-family: 'Brush Script MT', cursive;
+    font-size: 33px;
+    line-height: 1.9;
+    max-width: 950px;
+    margin: auto;
+    padding: 25px;
+    color: white;
+  ">
+    Happy Birthday to the World's Best Cuccino 🎉❤️✨  
+
+    As this beautiful day is all about you 🥹🎂, I want you to always remember how incredibly special and important you are to me.  
+    I admire your strength 💪🏽, your heart ❤️, your intelligence 🧠, your kindness 🌸, and the amazing person you continue becoming every single day ✨.  
+
+    Never narrow your dreams 🌍⭐ because the top is exactly where you belong 👑🚀.  
+    You are destined for greatness, success, happiness, and beautiful things in life 🌟💫, and I pray that every step you take leads you closer to your purpose 🙏🏽❤️.  
+
+    No matter what happens, always remember that you can count on me like 1, 2, 3 🤞🏽💖.  
+    I will always support you, believe in you, and cheer for you because you truly mean so much to me 🥺❤️.  
+
+    I truly believe our meeting was never by accident ✨🌍.  
+    Some people come into our lives for a reason, and you came into mine in the most beautiful way 🌹❤️.  
+    There is something so rare, genuine, comforting, and extraordinary about you 🌟, and honestly… you are just perfect to me 🫶🏽💫.  
+
+    Your presence brings peace 🕊️, happiness 😊, warmth ☀️, and meaning to my life, and I am forever grateful that our paths crossed ❤️.  
+
+    <br><br>
+
+    <span style="font-size: 42px;">
+      Ti amo tanto ❤️
+    </span>
+    <br>
+    <span style="font-size: 24px;">
+      (Italian: “I love you so much”) 🇮🇹
+    </span>
+
+    <br><br>
+
+    <span style="font-size: 40px;">
+      Memento vivere ✨
+    </span>
+    <br>
+    <span style="font-size: 24px;">
+      (Latin: “Remember to live”) 🇻🇦
+    </span>
+
+    <br><br>
+
+    Keep shining ✨  
+    Keep dreaming 🌙  
+    Keep becoming the amazing man you are destined to be 👑❤️  
+
+    Happy Birthday once again, Opare-Addo 🎂🥳🎉❤️  
+    May this new chapter of your life be filled with endless joy, love, peace, success, and unforgettable memories 💫🌹✨.
+  </p>
+</div>
+
+<script>
+  function showPage(pageId) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(pageId).classList.add('active');
+  }
+
+  function playMusic() {
+    document.getElementById('audio').play();
+  }
+
+  function pauseMusic() {
+    document.getElementById('audio').pause();
+  }
+
+  function playTrack(id) {
+    document.getElementById(id).play();
+  }
+
+  function pauseTrack(id) {
+    document.getElementById(id).pause();
+  }
+</script>
+
+</body>
+</html>
+
